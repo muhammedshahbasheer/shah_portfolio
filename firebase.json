@@ -1,0 +1,39 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "shah-portfolio-2d2af",
+          "appId": "1:475339212315:android:c31426632fcd65260bdabe",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "shah-portfolio-2d2af",
+          "configurations": {
+            "android": "1:475339212315:android:c31426632fcd65260bdabe",
+            "ios": "1:475339212315:ios:7499e2a879a920450bdabe",
+            "macos": "1:475339212315:ios:7499e2a879a920450bdabe",
+            "web": "1:475339212315:web:6dd31e1a297bf2550bdabe",
+            "windows": "1:475339212315:web:166b49734e87664c0bdabe"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
