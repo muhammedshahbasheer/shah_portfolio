@@ -4,6 +4,7 @@ import 'package:shah_portfolio/widgets/over_zoom.dart';
 import '../widgets/nav_buttons.dart';
 import '../widgets/project card.dart';
 import '../widgets/section_title.dart';
+import 'dart:html' as html;
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,6 +28,14 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  void downloadResume() {
+    final url = 'lib/assets/resume/muhammedshah_resume.pdf';
+
+    html.AnchorElement anchor = html.AnchorElement(href: url)
+      ..setAttribute("download", "Muhammedshah_Resume.pdf")
+      ..click();
+  }
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -43,18 +52,17 @@ class _HomePageState extends State<HomePage> {
           NavButton(title: 'About', ontap: () => scrollTo(aboutKey)),
           NavButton(title: 'Projects', ontap: () => scrollTo(projectsKey)),
           NavButton(title: 'Gallery', ontap: () => scrollTo(galleryKey)),
+          NavButton(title: 'Resume', ontap: downloadResume),
+
           NavButton(
             title: 'Contact',
             ontap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => const ContactPage(),
-                ),
+                MaterialPageRoute(builder: (context) => const ContactPage()),
               );
             },
-          )
-          ,
+          ),
         ],
       ),
       body: SingleChildScrollView(
